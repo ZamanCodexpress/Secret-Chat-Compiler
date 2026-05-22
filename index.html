@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Secret Chat Compiler - Convert text to binary and decode binary back to text using real 8-bit ASCII encoding"
+    />
+    <title>Secret Chat Compiler</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <h1 class="title">Secret Chat Compiler</h1>
+        <p class="subtitle">Real Binary Encoding & Decoding System</p>
+      </header>
+
+      <!-- Main Content Area -->
+      <div class="main-content">
+        <!-- Left Column: Encoder & Decoder -->
+        <div class="left-column">
+          <!-- Encoder Section -->
+          <section class="encoder-section panel">
+            <h2 class="section-title">Encode Message</h2>
+            <label for="text-input" class="input-label"
+              >Write Your Secret Message</label
+            >
+            <textarea
+              id="text-input"
+              class="input-textarea"
+              placeholder="Enter text to compile into binary..."
+              rows="6"
+            ></textarea>
+            <button id="encode-btn" class="action-btn">
+              <span class="btn-icon">⚡</span>
+              Compile to Binary
+            </button>
+
+            <div id="binary-output-container" class="output-container hidden">
+              <div class="output-header">
+                <label class="output-label">Binary Output</label>
+                <button id="copy-binary-btn" class="copy-btn">Copy</button>
+              </div>
+              <div id="binary-output" class="output-display"></div>
+            </div>
+          </section>
+
+          <!-- Decoder Section -->
+          <section class="decoder-section panel">
+            <h2 class="section-title">Decode Binary</h2>
+            <label for="binary-input" class="input-label"
+              >Paste Binary to Decode</label
+            >
+            <textarea
+              id="binary-input"
+              class="input-textarea"
+              placeholder="Paste 01010101 binary here..."
+              rows="6"
+            ></textarea>
+            <button id="decode-btn" class="action-btn">
+              <span class="btn-icon">🔓</span>
+              Decode to Text
+            </button>
+
+            <div id="text-output-container" class="output-container hidden">
+              <div class="output-header">
+                <label class="output-label">Decoded Message</label>
+                <button id="copy-text-btn" class="copy-btn">Copy</button>
+              </div>
+              <div id="text-output" class="output-display"></div>
+            </div>
+
+            <div id="error-message" class="error-message hidden"></div>
+          </section>
+        </div>
+
+        <!-- Right Column: History Panel -->
+        <aside class="right-column">
+          <div class="history-panel panel">
+            <div class="history-header">
+              <h2 class="section-title">Compilation History</h2>
+              <button id="clear-all-btn" class="clear-all-btn">
+                Clear All
+              </button>
+            </div>
+            <div id="history-list" class="history-list">
+              <div class="empty-state">
+                <p>No compilations yet</p>
+                <p class="empty-state-sub">
+                  Your encoding and decoding history will appear here
+                </p>
+              </div>
+            </div>
+
+            <!-- Statistics Pie Chart -->
+            <div class="stats-section">
+              <h3 class="stats-title">Statistics</h3>
+              <div class="pie-chart-container">
+                <svg id="pie-chart" viewBox="0 0 200 200" class="pie-chart">
+                  <circle
+                    cx="100"
+                    cy="100"
+                    r="90"
+                    fill="rgba(10, 5, 21, 0.4)"
+                  />
+                </svg>
+                <div class="stats-legend">
+                  <div class="legend-item">
+                    <span class="legend-color encode-color"></span>
+                    <span class="legend-label"
+                      >Encode: <strong id="encode-count">0</strong></span
+                    >
+                  </div>
+                  <div class="legend-item">
+                    <span class="legend-color decode-color"></span>
+                    <span class="legend-label"
+                      >Decode: <strong id="decode-count">0</strong></span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="neon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ffcc"></stop>
+      <stop offset="100%" stop-color="#00ff88"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="64" height="64" rx="16" fill="#050807"></rect>
+
+  <!-- Binary -->
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" fill="url(#neon)" letter-spacing="1">
+    01
+  </text>
+
+  <!-- Glow -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="none" stroke="url(#neon)" stroke-width="2" opacity="0.6"></rect>
+</svg>
